@@ -8,16 +8,11 @@
   <%= @question.text %>
 </p>
 
-<h2>Add a comment:</h2>
-<%= form_for([@question, @question.answers.build]) do |f| %>
-  <p>
-    <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<h2>Comments</h2>
+<%= render @question.answers %>
 
-<%= link_to 'Back', questions_path %>
-| <%= link_to 'Edit', edit_question_path(@question) %>
+<h2>Add a comment:</h2>
+<%= render "answers/form" %>
+
+<%= link_to 'Edit question', edit_question_path(@question) %> |
+<%= link_to 'Back to Questions', questions_path %>
