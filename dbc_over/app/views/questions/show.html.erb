@@ -8,6 +8,11 @@
   <%= @question.text %>
 </p>
 
+<p>
+  <strong>Votes:</strong>
+  <%= @question.votes %>
+</p>
+
 <h2>Comments</h2>
 <%= render @question.answers %>
 
